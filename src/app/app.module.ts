@@ -10,6 +10,8 @@ import { HeroComponent } from './components/home/hero/hero.component';
 import { PopularDrinksComponent } from './components/home/popular-drinks/popular-drinks.component';
 import { PopularIngredientsComponent } from './components/home/popular-ingredients/popular-ingredients.component';
 import { LatestDrinksComponent } from './components/home/latest-drinks/latest-drinks.component';
+import { RandomDrinksComponent } from './components/home/random-drinks/random-drinks.component';
+import { RandomIngredientsComponent } from './components/home/random-ingredients/random-ingredients.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { LatestDrinksComponent } from './components/home/latest-drinks/latest-dr
     HeroComponent,
     PopularDrinksComponent,
     PopularIngredientsComponent,
-    LatestDrinksComponent
+    LatestDrinksComponent,
+    RandomDrinksComponent,
+    RandomIngredientsComponent
   ],
   imports: [
     BrowserModule,
