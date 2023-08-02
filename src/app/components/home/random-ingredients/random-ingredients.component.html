@@ -1,0 +1,8 @@
+<h2 class="text-black">Random Ingredients</h2>
+<div class="d-flex flex-wrap justify-content-start">
+  <div class="text-center text-black" *ngFor="let random of randomIngredients" style="margin-left: 100px; margin-right: 100px; margin-bottom: 116px;">
+    <img [src]="random.img" [alt]="random.name">
+    <h6> {{random.name}} </h6>
+    <p>Recipes with vodka <img src="assets/icons/chevron-right.svg" alt="Recipes with vodka"> </p>
+  </div>
+</div>
