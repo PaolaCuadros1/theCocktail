@@ -2,6 +2,8 @@
   <div class="container">
     <hr style="border: 2px #475751 solid;" >
     <p class="text-center text-secondary">Browse By Name</p>
-    <p class="text-center text-black letters" >{{letters}}</p>
+    <div class="text-center">
+      <label class="text-secondary" *ngFor="let letter of letters; let i = index" (click)="onClick(letter)">{{letter}}<span *ngIf="i < 25" > / </span></label>
+    </div>
   </div>
 </footer>

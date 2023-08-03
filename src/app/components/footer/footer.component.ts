@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  letters: string = ''
-  constructor() { }
+
+  letters: Array<string> = []
+
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.generateAbecesary()
@@ -15,9 +20,12 @@ export class FooterComponent implements OnInit {
 
   generateAbecesary() {
     for (let i = 65; i <= 90; i++) {
-      const slash = (i == 65 || i == 91) ? '' : '/'
-      this.letters = `${this.letters}${slash}${String.fromCharCode(i)}`
+      this.letters.push(String.fromCharCode(i))
     }
+  }
+
+  onClick(letter: string){
+    this.router.navigate(['cocktails', letter], { state: { letter: letter } })
   }
 
 }
