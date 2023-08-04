@@ -10,6 +10,12 @@ import { CocktailService } from 'src/app/services/cocktail.service';
 export class IngredientsComponent implements OnInit {
 
   cocktailId: number =  0
+  cocktailName: string = ''
+  cocktailImage: string = ''
+  cocktailIngredients: Array<any> = []
+  ingredients: Array<any> = []
+  colors: Array<string> = ['#DFBED8', '#636670', '#DBB6A1']
+
 
   constructor(
     private cocktailService: CocktailService,
@@ -19,17 +25,47 @@ export class IngredientsComponent implements OnInit {
 
   ngOnInit(): void {
     this.cocktailId = this.activatedRoute.snapshot.params['id']
+    this.getCocktailById()
   }
 
   getCocktailById(){
     this.cocktailService.getCocktailById(this.cocktailId).subscribe({
       next: (cocktail) => {
-        console.log('cocktail --- ', cocktail)
+        cocktail.drinks.forEach( (element:any) => {
+          this.cocktailName = element.strDrink
+          this.cocktailImage = element.strDrinkThumb
+          for(let i = 1; i <= 15; i++){
+            if(element[`strIngredient${i}`] != null){
+              this.cocktailIngredients.push({name: element[`strIngredient${i}`], position: i})
+            }
+          }
+        });
       },
       error: () => {
 
+      },
+      complete: () => {
+        this.getIngredientData()
       }
     })
+  }
+
+  getIngredientData(){
+    console.log('this.cocktailIngredients --- ', this.cocktailIngredients)
+    this.cocktailIngredients.forEach(async (ingredient) => {
+      this.cocktailService.getIngredientByName(ingredient.name).subscribe({
+        next: (result) => {
+          result.ingredients.forEach((ingredientData: any) => {
+            this.ingredients.push({id: ingredientData.idIngredient, name: ingredientData.strIngredient})
+          });
+          //console.log(this.ingredients)
+        }
+      })
+    });
+  }
+
+  getColorBackground(i: number){
+    console.log('---- ', i)
   }
 
 }
