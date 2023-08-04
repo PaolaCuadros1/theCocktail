@@ -1,9 +1,9 @@
 <div class="container">
   <div class="d-flex flex-wrap justify-content-center">
     <div class="text-center text-black" *ngFor="let drink of drinks"
-      style="margin-left: 100px; margin-right: 100px; margin-bottom: 116px;"><a routerLink="cocktail/{{drink.idDrink}}" >
+      style="margin-left: 100px; margin-right: 100px; margin-bottom: 116px;"><a routerLink="/cocktail/{{drink.idDrink}}" >
         <img [src]="drink.strDrinkThumb" [alt]="drink.strDrink" class="img-thumbnail rounded-circle" width="200">
-        <h6> {{drink.strDrink}} - {{drink.idDrink}} </h6>
+        <h6> {{drink.strDrink}}</h6>
       </a>
       <p>Add to my list <img src="assets/icons/plus.svg" alt="" srcset=""> </p>
     </div>
