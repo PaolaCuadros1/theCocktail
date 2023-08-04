@@ -12,7 +12,8 @@ import { PopularIngredientsComponent } from './components/home/popular-ingredien
 import { LatestDrinksComponent } from './components/home/latest-drinks/latest-drinks.component';
 import { RandomDrinksComponent } from './components/home/random-drinks/random-drinks.component';
 import { RandomIngredientsComponent } from './components/home/random-ingredients/random-ingredients.component';
-import { MenuComponent } from './components/menu/menu.component';
+import { MenuComponent } from './components/cocktails/cocktails.component';
+import { IngredientsComponent } from './components/ingredients/ingredients.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MenuComponent } from './components/menu/menu.component';
     LatestDrinksComponent,
     RandomDrinksComponent,
     RandomIngredientsComponent,
-    MenuComponent
+    MenuComponent,
+    IngredientsComponent
   ],
   imports: [
     BrowserModule,

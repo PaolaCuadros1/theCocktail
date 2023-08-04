@@ -14,4 +14,12 @@ export class CocktailService {
   getAllCocktails() {
     return this.httpClient.get<any>(`${environment.S_CORE_SERVICE_API_BASE_URL}filter.php?c=Cocktail`);
   }
+
+  getCocktailsByFirstLetter(letter: string) {
+    return this.httpClient.get<any>(`${environment.S_CORE_SERVICE_API_BASE_URL}search.php?f=${letter}`);
+  }
+
+  getCocktailById(id: number) {
+    return this.httpClient.get<any>(`${environment.S_CORE_SERVICE_API_BASE_URL}lookup.php?i=${id}`);
+  }
 }
