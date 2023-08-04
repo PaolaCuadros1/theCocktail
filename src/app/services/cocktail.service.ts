@@ -22,4 +22,8 @@ export class CocktailService {
   getCocktailById(id: number) {
     return this.httpClient.get<any>(`${environment.S_CORE_SERVICE_API_BASE_URL}lookup.php?i=${id}`);
   }
+
+  getIngredientByName(name: string) {
+    return this.httpClient.get<any>(`${environment.S_CORE_SERVICE_API_BASE_URL}search.php?i=${name}`);
+  }
 }
