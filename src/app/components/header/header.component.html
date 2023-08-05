@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+<nav class="navbar navbar-expand-lg bg-light pt-4">
+  <div class="container">
+    <a class="navbar-brand" router-link="/">
       <img src="/assets/images/Logo.png" alt="The Cocktail">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -8,7 +8,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center w-100">
+      <ul class="navbar-nav ms-2 ms-md-5 mb-2 mb-lg-0 justify-content-start w-100">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="cocktails" >Menu</a>
         </li>
@@ -19,10 +19,19 @@
           <a class="nav-link">Blog</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+
+      <div class="d-flex align-items-center">
+        <form class="d-flex flex-grow-1" role="search">
+          <div class="input-group">
+            <span class="input-group-text material-symbols-outlined text-primary" id="search-addon">search</span>
+            <input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+          </div>
+        </form>
+
+        <a href="#" class="btn btn-link">
+          <img src="/assets/images/bookmarks.png" alt="Bookmarks" />
+        </a>
+      </div>
     </div>
   </div>
 </nav>
