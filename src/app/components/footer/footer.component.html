@@ -1,9 +1,26 @@
 <footer>
-  <div class="container">
+  <div class="container-fluid p-3">
     <hr style="border: 2px #475751 solid;" >
     <p class="text-center text-secondary">Browse By Name</p>
     <div class="text-center">
       <label class="text-secondary" *ngFor="let letter of letters; let i = index" (click)="onClick(letter)">{{letter}}<span *ngIf="i < 25" > / </span></label>
+      <div style=" background-color: #475751;"  class="text-white mt-3" >
+        <div class="row">
+          <div class="col-6">
+            <div class="d-flex justify-content-start align-items-center" style="height: 95px;" >
+              © 2023 TheCocktailDB.Proudly built in the UK
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="d-flex justify-content-end align-items-center" style="height: 95px;">
+              <p class="ms-3 me-3">Missing</p>
+              <p class="ms-3 me-3">About</p>
+              <p class="ms-3 me-3">Faq</p>
+              <p class="ms-3 me-3">Contact</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </footer>

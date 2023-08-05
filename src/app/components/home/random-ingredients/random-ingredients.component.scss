@@ -1,0 +1,68 @@
+:host {
+  section {
+    position: relative;
+    top: 0;
+    left: 0;
+
+    &::before {
+      content: "";
+      background-color: #475751;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 10%;
+      width: 100%;
+      height: 80%;
+      border-radius: 40px;
+      z-index: 1;
+    }
+
+    .section-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+
+      .card-drink {
+        width: 100%;
+        max-width: 33%;
+        gap: 10px;
+
+        .card-drink__thumbnail {
+          margin-bottom: 0;
+          border: 8px solid aliceblue;
+          border-radius: 50%;
+        }
+
+        .card-drink__add {
+          gap: 10px;
+          color: #a3aba8;
+          text-decoration: none;
+
+          svg {
+            stroke: #ffffff;
+          }
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .section-wrapper {
+    position: relative;
+
+    .lemon {
+      position: absolute;
+      right: -12px;
+      top: 40%;
+    }
+
+    .tonic {
+      position: absolute;
+      left: -12px;
+      bottom: 20%;
+    }
+  }
+}

@@ -1,8 +1,23 @@
-<h2 class="text-black">Popular Ingredients</h2>
-<div class="d-flex flex-wrap justify-content-start">
-  <div class="text-center text-black" *ngFor="let ingredient of popularIngredients" style="margin-left: 100px; margin-right: 100px; margin-bottom: 116px;">
-    <img [src]="ingredient.img" [alt]="ingredient.name">
-    <h6> {{ingredient.name}} </h6>
-    <p>Recipes with vodka <img src="assets/icons/chevron-right.svg" alt="Recipes with vodka"> </p>
-  </div>
+<div class="section-wrapper">
+  <section id="popular-ingredients" class="container">
+    <h2 class="text-right text-dark mb-3">Popular Ingredients</h2>
+
+    <div class="d-flex flex-wrap justify-content-start section-content">
+      <div class="card-ingredient d-flex flex-column align-items-center pb-5" *ngFor="let ingredient of popularIngredients">
+        <figure class="card-ingredient__thumbnail" [style]="'background-color: ' + ingredient.bgColor + ';'">
+          <img [src]="ingredient.img" [alt]="ingredient.name" />
+        </figure>
+
+        <h6 class="mb-0">{{ingredient.name}}</h6>
+
+        <button type="button" class="btn btn-link d-flex align-items-center card-ingredient__add">
+          <span>Recipies with {{ ingredient.name }}</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <img class="honey" src="/assets/images/miel-fondo.png" alt="" />
+  <img class="gin" src="/assets/images/gin-fondo.png" alt="" />
 </div>

@@ -1,0 +1,9 @@
+<button [type]="type" class="btn btn-primary" [ngClass]="iconName ? 'btn-with-icon' : ''">
+  <ng-content></ng-content>
+
+  <div *ngIf="iconName" class="d-flex align-items-center justify-content-center btn-icon text-white">
+    <span class="material-symbols-outlined">
+      {{iconName}}
+    </span>
+  </div>
+</button>

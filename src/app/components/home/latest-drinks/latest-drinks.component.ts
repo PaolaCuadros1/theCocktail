@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LatestDrinksComponent implements OnInit {
 
-  popularDrinks = [
+  lastesDrinks = [
     { img: 'assets/images/Cocktail-Horses-Neck.png', name: 'Cocktail Horse’s Neck' },
     { img: 'assets/images/Planters-Punch.png', name: 'Planter’s Punch' },
     { img: 'assets/images/Ramos-Gin-Fizz.png', name: 'Ramos Gin Fizz' },

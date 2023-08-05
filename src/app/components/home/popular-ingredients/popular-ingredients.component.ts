@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class PopularIngredientsComponent implements OnInit {
 
   popularIngredients = [
-    { img: 'assets/images/Vodka.png', name: 'Vodka' },
-    { img: 'assets/images/Gin.png', name: 'Gin' },
-    { img: 'assets/images/Rum.png', name: 'Rum' },
-    { img: 'assets/images/Tequila.png', name: 'Tequila' }
+    { img: 'assets/images/Vodka.png', name: 'Vodka', bgColor: '#dfbed8' },
+    { img: 'assets/images/Gin.png', name: 'Gin', bgColor: '#c5dba1' },
+    { img: 'assets/images/Rum.png', name: 'Rum', bgColor: '#dbb6a1' },
+    { img: 'assets/images/Tequila.png', name: 'Tequila', bgColor: '#c5dba1' }
   ]
 
   constructor() { }
