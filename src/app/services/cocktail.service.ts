@@ -15,8 +15,9 @@ export class CocktailService {
     return this.httpClient.get<any>(`${environment.S_CORE_SERVICE_API_BASE_URL}filter.php?c=Cocktail`);
   }
 
-  getCocktailsByFirstLetter(letter: string) {
-    return this.httpClient.get<any>(`${environment.S_CORE_SERVICE_API_BASE_URL}search.php?f=${letter}`);
+  getCocktailsByFirstLetter(letter: string, searchBy: string) {
+    let by = searchBy == 'filter' ? 'i' : 'f'
+    return this.httpClient.get<any>(`${environment.S_CORE_SERVICE_API_BASE_URL}${searchBy}.php?${by}=${letter}`);
   }
 
   getCocktailById(id: number) {
