@@ -51,21 +51,19 @@ export class IngredientsComponent implements OnInit {
   }
 
   getIngredientData(){
-    console.log('this.cocktailIngredients --- ', this.cocktailIngredients)
     this.cocktailIngredients.forEach(async (ingredient) => {
       this.cocktailService.getIngredientByName(ingredient.name).subscribe({
         next: (result) => {
           result.ingredients.forEach((ingredientData: any) => {
             this.ingredients.push({id: ingredientData.idIngredient, name: ingredientData.strIngredient})
           });
-          //console.log(this.ingredients)
         }
       })
     });
   }
 
-  getColorBackground(i: number){
-    console.log('---- ', i)
+  getCocktailsByIngredient(){
+
   }
 
 }

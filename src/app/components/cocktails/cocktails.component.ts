@@ -11,7 +11,8 @@ export class MenuComponent implements OnInit {
 
   drinks: Array<any> = []
   navigationSubscription
-  letter: string = ''
+  letterOrIngredient: string = ''
+  searchBy: string = ''
 
   constructor(
     private cocktailService: CocktailService,
@@ -20,8 +21,9 @@ export class MenuComponent implements OnInit {
   ) {
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
       if (e instanceof NavigationEnd) {
-        this.letter = this.activatedRoute.snapshot.params['letter']
-        this.letter == undefined ? this.getAllCocktails() : this.getCocktailsByFirstLetter()
+        this.letterOrIngredient = this.activatedRoute.snapshot.params['letterOrIngredient']
+        this.searchBy = this.activatedRoute.snapshot.params['searchBy']
+        this.letterOrIngredient == undefined ? this.getAllCocktails() : this.getCocktailsByFirstLetter()
       }
     });
   }
@@ -40,7 +42,7 @@ export class MenuComponent implements OnInit {
   }
 
   getCocktailsByFirstLetter(){
-    this.cocktailService.getCocktailsByFirstLetter(this.letter).subscribe({
+    this.cocktailService.getCocktailsByFirstLetter(this.letterOrIngredient, this.searchBy).subscribe({
       next: (cocktails) => {
         this.drinks = cocktails.drinks
       },

@@ -25,7 +25,7 @@ export class FooterComponent implements OnInit {
   }
 
   onClick(letter: string){
-    this.router.navigate(['cocktails', letter], { state: { letter: letter } })
+    this.router.navigate(['cocktails', {letterOrIngredient: letter, searchBy: 'search'}])
   }
 
 }

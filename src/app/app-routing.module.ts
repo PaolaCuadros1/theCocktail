@@ -7,7 +7,7 @@ import { IngredientsComponent } from './components/ingredients/ingredients.compo
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'cocktails', component: MenuComponent},
-  {path: 'cocktails/:letter', component: MenuComponent},
+  {path: 'cocktails/:letterOrIngredient/:searchBy', component: MenuComponent},
   {path: 'cocktail/:id', component: IngredientsComponent},
 ];
 
